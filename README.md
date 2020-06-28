@@ -28,13 +28,13 @@ Para rodar a aplicação, execute os próximos passos:
 
 1. Faça o clone do projeto
 ```
-https://github.com/felipefariasdasilva/web-scraper.git
+https://github.com/felipefariasdasilva/ecommerce-kafka-java.git
 ```
 
 2. Entre na pasta
 
 ```
-cd web-scraper
+cd ecommerce-kafka-java
 ```
 
 3. Execute a aplicação com Maven
@@ -74,6 +74,7 @@ Adicione notas de como dar deploy do sistema em produção.
 ## Desenvolvido com
 * [Spring Boot](https://spring.io/projects/spring-boot) - O framework web utilizado
 * [Maven](https://maven.apache.org/) - Gerenciador de dependências
+* [Kafka](https://kafka.apache.org//) - Plataforma distribuída de stream
 
 ## Contribuições
 
