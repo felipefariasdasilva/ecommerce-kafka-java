@@ -23,6 +23,9 @@ mvn -v
 ```
 
 3. Docker
+```
+docker -v
+```
 
 
 ### Instalação
