@@ -22,7 +22,7 @@ java -version
 mvn -v
 ```
 
-3. Docker
+3. É necessário ter o Docker para executar os containers:
 ```
 docker -v
 ```
@@ -54,8 +54,8 @@ mvn spring-boot:run
 docker-compose up -d
 ```
 
-Obs.1: O template do docker-compose pode ser encontrado [confluentinc@GitHub](https://github.com/confluentinc/cp-docker-images)
-Obs.2: Zookeeper está com uma porta diferente do padrão. Ao invés de ser 2181, neste docker-compose está 2182
+:heavy_exclamation_mark: Obs.1: O template do docker-compose pode ser encontrado [confluentinc@GitHub](https://github.com/confluentinc/cp-docker-images)
+:heavy_exclamation_mark: Obs.2: Zookeeper está com uma porta diferente do padrão. Ao invés de ser 2181, neste docker-compose está 2182
 
 5. Verifique se os containers subiram de forma correta
 ```
