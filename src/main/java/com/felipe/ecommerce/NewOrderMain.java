@@ -11,7 +11,7 @@ public class NewOrderMain {
 
         try (KafkaDispatcher orderDspatcher = new KafkaDispatcher<Order>()) {
             try (KafkaDispatcher emailDspatcher = new KafkaDispatcher<String>()) {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < 50; i++) {
 
                     String userId = UUID.randomUUID().toString();
                     String orderId = UUID.randomUUID().toString();
