@@ -1,4 +1,4 @@
-# E-commerce com Kafka
+# :sparkler: E-commerce com Kafka
 
 Aplicação Java de um E-commerce, utilizando o Kafka como mensageria.
 
@@ -16,11 +16,17 @@ Dependências necessárias para se instalar o software e como instalá-las.
 java -version
 ```
 
-1. É necessário ter o Apache Maven (ferramenta de automação e gerenciamento do projeto) instalado também. Para verificar, rode o seguinte comando:
+2. É necessário ter o Apache Maven (ferramenta de automação e gerenciamento do projeto) instalado também. Para verificar, rode o seguinte comando:
 
 ```
 mvn -v
 ```
+
+3. É necessário ter o Docker para executar os containers:
+```
+docker -v
+```
+
 
 ### Instalação
 
@@ -43,8 +49,33 @@ cd ecommerce-kafka-java
 mvn spring-boot:run
 ```
 
+4. Suba os containers do zookeeper e kafka através do docker-compose.yml em segundo plano(flag -d)
+```
+docker-compose up -d
+```
+
+:heavy_exclamation_mark: Obs.1: O template do docker-compose pode ser encontrado [Confluentinc@GitHub](https://github.com/confluentinc/cp-docker-images)<br>
+:heavy_exclamation_mark: Obs.2: Zookeeper está com uma porta diferente do padrão. Ao invés de ser 2181, neste docker-compose está 2182
+
+5. Verifique se os containers subiram de forma correta
+```
+docker-compose ps
+```
+
 Finalize com um exemplo obtendo dados do sistema ou fazendo uma pequena demostração do funcionamento da aplicação
 
+
+## Dicas
+
+1. Informações do tópico
+```
+ docker-compose exec kafka kafka-consumer-groups --all-groups --describe --bootstrap-server kafka:9092
+```
+
+2. Alterar numero de partições do tópico
+```
+docker-compose exec kafka kafka-topics --alter --topic ECOMMERCE_NEW_ORDER --partitions 3 --zookeeper zookeeper:2182
+```
 
 ## Executando os testes
 
@@ -74,6 +105,7 @@ Adicione notas de como dar deploy do sistema em produção.
 ## Desenvolvido com
 * [Spring Boot](https://spring.io/projects/spring-boot) - O framework web utilizado
 * [Maven](https://maven.apache.org/) - Gerenciador de dependências
+* [Docker](https://www.docker.com/) - Criado de Containers
 * [Kafka](https://kafka.apache.org//) - Plataforma distribuída de stream
 
 ## Contribuições
@@ -84,7 +116,7 @@ Por favor leia [CONTRIBUTING.md]() para mais detalhes a respeito do nosso códig
 
 ## Versionamento
 
-Nós usamos [GitHub](https://github.com/ para versionamento. Para visualizar as versões disponíveis veja [tags nesse repositórios](https://github.com/your/project/tags). 
+Nós usamos [GitHub](https://github.com/) para versionamento. Para visualizar as versões disponíveis veja [tags nesse repositórios](https://github.com/your/project/tags). 
 
 ## Autores
 
