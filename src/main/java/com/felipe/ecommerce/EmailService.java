@@ -2,12 +2,18 @@ package com.felipe.ecommerce;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
+import java.util.HashMap;
+
 public class EmailService {
 
     public static void main(String[] args) {
         EmailService emailService = new EmailService();
         try(KafkaService service = new KafkaService(
-                EmailService.class.getSimpleName(), "ECOMMERCE_SEND_EMAIL", emailService::parse)) {
+                EmailService.class.getSimpleName(),
+                "ECOMMERCE_SEND_EMAIL",
+                emailService::parse,
+                String.class,
+                new HashMap<>())) {
             service.run();
         }
     }
