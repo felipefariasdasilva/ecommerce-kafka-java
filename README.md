@@ -54,15 +54,9 @@ mvn spring-boot:run
 docker-compose up -d
 ```
 
----
-**NOTE**
+> **_NOTE:_**  O template do docker-compose pode ser encontrado [Confluentinc@GitHub](https://github.com/confluentinc/cp-docker-images)<br>.
 
-O template do docker-compose pode ser encontrado [Confluentinc@GitHub](https://github.com/confluentinc/cp-docker-images)<br>
-
----
-
-:heavy_exclamation_mark: Obs.1: O template do docker-compose pode ser encontrado [Confluentinc@GitHub](https://github.com/confluentinc/cp-docker-images)<br>
-:heavy_exclamation_mark: Obs.2: Zookeeper está com uma porta diferente do padrão. Ao invés de ser 2181, neste docker-compose está 2182
+> **_NOTE:_**  Zookeeper está com uma porta diferente do padrão. Ao invés de ser 2181, neste docker-compose está 2182
 
 5. Verifique se os containers subiram de forma correta
 ```
