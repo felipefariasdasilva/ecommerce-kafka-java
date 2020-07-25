@@ -32,7 +32,7 @@ public class FraudDetectorService {
         System.out.println(record.partition());
         System.out.println(record.offset());
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -41,10 +41,10 @@ public class FraudDetectorService {
         if(isFraud(order)){
             //pretending that the fraud happens when the amount is >= 4500
             System.out.println("Order is fraud!!!!!" + order);
-            orderKafkaDispatcher.send("ECOMMERCE_ORDER_REJECTED", order.getUserId(), order);
+            orderKafkaDispatcher.send("ECOMMERCE_ORDER_REJECTED", order.getEmail(), order);
         }else{
             System.out.println("Approved: " + order);
-            orderKafkaDispatcher.send("ECOMMERCE_ORDER_APPROVED", order.getUserId(), order);
+            orderKafkaDispatcher.send("ECOMMERCE_ORDER_APPROVED", order.getEmail(), order);
         }
 
     }

@@ -9,6 +9,7 @@
         <module name="commonkafka" />
         <module name="serviceemail" />
         <module name="servicefrauddetector" />
+        <module name="servicehttpecommerce" />
         <module name="servicelog" />
         <module name="serviceneworder" />
         <module name="serviceusers" />
