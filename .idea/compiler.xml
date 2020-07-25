@@ -11,6 +11,7 @@
         <module name="servicefrauddetector" />
         <module name="servicelog" />
         <module name="serviceneworder" />
+        <module name="serviceusers" />
       </profile>
     </annotationProcessing>
   </component>

@@ -13,20 +13,7 @@ public class Order {
         this.amout = amout;
     }
 
-    public BigDecimal getAmout() {
-        return amout;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "userId='" + userId + '\'' +
-                ", orderId='" + orderId + '\'' +
-                ", amout=" + amout +
-                '}';
+    public String getEmail() {
+        return "email";
     }
 }

@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
 class KafkaService<T> implements Closeable {
@@ -41,8 +42,14 @@ class KafkaService<T> implements Closeable {
             if(!records.isEmpty()){
                 System.out.println("Encontrei " + records.count() + " registros");
                 for (ConsumerRecord<String, T> record : records) {
-                    parse.consume(record);
-
+                    try {
+                        parse.consume(record);
+                    } catch (Exception e) {
+                        // only catchers Exception because no matter which Exception
+                        // i want to recover and parse the next one
+                        // so far, just logginf the exception for this message
+                        e.printStackTrace();
+                    }
                 }
             }
         }
