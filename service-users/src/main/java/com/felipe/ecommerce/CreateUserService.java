@@ -22,7 +22,6 @@ public class CreateUserService {
             // be careful, the sql could be wrong, be reaaaaaaaaaaaaaaly careful
             ex.printStackTrace();
         }
-
     }
 
     public static void main(String[] args) throws SQLException {
